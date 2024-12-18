@@ -28,7 +28,6 @@ async def on_ready():
     logging.info(f"Logged in as {bot.user} ({bot.user.id})")
     logging.info("Bot ready.")
 
-
 # Call the setup function manually
 @bot.event
 async def on_connect():
