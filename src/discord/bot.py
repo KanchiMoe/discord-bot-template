@@ -1,3 +1,4 @@
+from asyncio import Event
 import discord
 from discord.ext import commands
 import logging
@@ -11,6 +12,7 @@ intents.messages        = True # Message-related events like on_message, on_mess
 
 # Bot instance
 BOT = commands.Bot(command_prefix="/", intents=intents, help_command=None)
+ready_event = Event()
 
 async def bot_add_slashcommands(bot: commands.Bot):
     logging.debug("Registering commands...")
@@ -36,3 +38,4 @@ async def on_ready():
     await bot_add_slashcommands(BOT)
     await tree_sync()
     logging.info("Bot ready")
+    ready_event.set()
