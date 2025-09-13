@@ -1,3 +1,2 @@
-asyncio
-discord
-python-dotenv
+discord.py==2.6.3
+python-dotenv==1.1.1
