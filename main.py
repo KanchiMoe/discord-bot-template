@@ -3,8 +3,6 @@ from dotenv import load_dotenv
 import logging
 import os
 
-import time
-
 from src.discord.bot import BOT, ready_event
 
 DEFAULT_LOG_LEVEL = os.environ.get("LOG_LEVEL") or logging.INFO
